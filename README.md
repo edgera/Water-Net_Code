@@ -1,3 +1,9 @@
+# Fork notes:
+- Adds docker env 
+
+To eval, add images to `test_real` and run `make` && `make fetch` && `make run`
+
+----------
 # TensorFlow-Water-Net
 This is the code of the implementation of the underwater image enhancement network (Water-Net) described in "Chongyi Li, Chunle Guo, Wenqi Ren, Runmin Cong, Junhui Hou, Sam Kwong, Dacheng Tao , <An Underwater Image Enhancement Benchmark Dataset and Beyond> IEEE TIP 2019". If you use our code or dataset for academic purposes, please consider citing our paper. Thanks.
 

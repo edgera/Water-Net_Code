@@ -40,11 +40,11 @@ flags.DEFINE_integer("c_dim", 3, "Dimension of image color. [3]")
 flags.DEFINE_integer("c_depth_dim", 1, "Dimension of depth. [1]")
 flags.DEFINE_string("checkpoint_dir", "checkpoint", "Name of checkpoint directory [checkpoint]")
 flags.DEFINE_string("sample_dir", "sample", "Name of sample directory [sample]")
-flags.DEFINE_string("test_data_dir", "test", "Name of sample directory [test]")
+flags.DEFINE_string("test_data_dir", "test_real", "Name of sample directory [test]")
 flags.DEFINE_boolean("is_train", False, "True for training, False for testing [True]")
 
 FLAGS = flags.FLAGS
-#FLAGS, unparsed = flags.parse_known_args()
+# FLAGS, unparsed = flags.parse()
 
 
 pp = pprint.PrettyPrinter()
@@ -55,10 +55,11 @@ def main(_):
       os.makedirs(FLAGS.checkpoint_dir)
     if not os.path.exists(FLAGS.sample_dir):
       os.makedirs(FLAGS.sample_dir)
-    filenames = os.listdir('test_real')
-    data_dir = os.path.join(os.getcwd(), 'test_real')
+    filenames = os.listdir(FLAGS.test_data_dir)
+    data_dir = FLAGS.test_data_dir
     data = glob.glob(os.path.join(data_dir, "*.jpg"))
-    test_data_list = data + glob.glob(os.path.join(data_dir, "*.png"))+glob.glob(os.path.join(data_dir, "*.bmp"))+glob.glob(os.path.join(data_dir, "*.jpeg"))
+    test_data_list = data + glob.glob(os.path.join(data_dir, "*.png"))+glob.glob(os.path.join(data_dir, "*.bmp"))+glob.glob(os.path.join(data_dir, "*.jpg"))
+
     print(data_dir,test_data_list)
 
   # filenames1 = os.listdir('wb_real')

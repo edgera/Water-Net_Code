@@ -83,9 +83,9 @@ class T_CNN(object):
     print("test")
     wb_test = white_balance(image_testm, 0.5)
     #wb_test=cv.imread("wb_real\DSC06938.jpg", cv.IMREAD_COLOR)
-    cv.imshow('WB', wb_test)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
+    # cv.imshow('WB', wb_test)
+    # cv.waitKey(0)
+    # cv.destroyAllWindows()
 
     wb_test = cv.cvtColor(wb_test, cv.COLOR_BGR2RGB) / 255
     shape = wb_test.shape
@@ -145,7 +145,7 @@ class T_CNN(object):
     for id in range(0,1):
         result_h0 = result_h[id,:,:,:].reshape(h , w , 3)
         result_h0 = result_h0.squeeze()
-        image_path0 = os.path.join(os.getcwd(),"sample")
+        image_path0 = self.sample_dir #os.path.join(os.getcwd(),"sample")
         output_name = os.path.basename(self.test_image_name)
        # name_split = self.test_image_name.split(".")   #enh addtion
        # output_name = name_split[0] + "_enh." + name_split[-1]   #enh addtion

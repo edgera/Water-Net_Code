@@ -1,0 +1,8 @@
+# add data to containers via volumes
+./ce_real
+./gc_real
+./samples
+./test_real
+./wb_real
+*.rar
+./checkpoint
